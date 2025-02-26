@@ -1,4 +1,4 @@
-module github.com/lxc/go-lxc
+module github.com/fcracker79/go-lxc
 
 go 1.20
 
