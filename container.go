@@ -2332,18 +2332,6 @@ func buildBdevSpecs(o *BackendStoreSpecs) *C.struct_bdev_specs {
 		defer C.free(unsafe.Pointer(lv))
 	}
 
-	if o.RBD.Name != "" {
-		lv := C.CString(o.RBD.Name)
-		specs.rbd.rbdname = lv
-		defer C.free(unsafe.Pointer(lv))
-	}
-
-	if o.RBD.Pool != "" {
-		lv := C.CString(o.RBD.Pool)
-		specs.rbd.rbdpool = lv
-		defer C.free(unsafe.Pointer(lv))
-	}
-
 	if o.Dir != nil {
 		dir := C.CString(*o.Dir)
 		specs.dir = dir
